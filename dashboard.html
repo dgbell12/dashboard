@@ -8,8 +8,8 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    background: #f5f0eb;
-    color: #3a3530;
+    background: #0a0a0f;
+    color: #f0eee8;
     font-family: 'Georgia', serif;
     min-height: 100vh;
     display: flex;
@@ -20,22 +20,20 @@
     gap: 2rem;
   }
 
-  #clock-section {
-    text-align: center;
-  }
+  #clock-section { text-align: center; }
 
   #time {
     font-size: clamp(4rem, 14vw, 9rem);
     font-weight: 300;
     letter-spacing: -0.02em;
     line-height: 1;
-    color: #3a3530;
+    color: #f0eee8;
     font-family: 'Georgia', serif;
   }
 
   #date {
     font-size: clamp(1rem, 3vw, 1.5rem);
-    color: #a09488;
+    color: #888780;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     margin-top: 0.5rem;
@@ -43,11 +41,7 @@
     font-weight: 300;
   }
 
-  #divider {
-    width: 1px;
-    height: 40px;
-    background: #ddd5cc;
-  }
+  #divider { width: 1px; height: 40px; background: #2c2c2a; }
 
   .card-row {
     display: flex;
@@ -59,8 +53,8 @@
   }
 
   .card {
-    background: #fdfaf7;
-    border: 0.5px solid #ddd5cc;
+    background: #12121a;
+    border: 0.5px solid #2c2c2a;
     border-radius: 16px;
     padding: 1.25rem 1.5rem;
     flex: 1;
@@ -71,7 +65,7 @@
     font-size: 0.65rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #b8a89a;
+    color: #5f5e5a;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     font-weight: 400;
     margin-bottom: 0.6rem;
@@ -81,13 +75,13 @@
     font-size: 2.8rem;
     font-weight: 300;
     line-height: 1;
-    color: #3a3530;
+    color: #f0eee8;
     font-family: 'Georgia', serif;
   }
 
   #weather-desc {
     font-size: 0.85rem;
-    color: #7d6e65;
+    color: #888780;
     margin-top: 0.3rem;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     font-weight: 300;
@@ -95,7 +89,7 @@
 
   #weather-feels {
     font-size: 0.75rem;
-    color: #b8a89a;
+    color: #5f5e5a;
     margin-top: 0.2rem;
     font-family: 'Helvetica Neue', Arial, sans-serif;
   }
@@ -103,14 +97,14 @@
   #word {
     font-size: 1.4rem;
     font-weight: 400;
-    color: #3a3530;
+    color: #f0eee8;
     font-family: 'Georgia', serif;
     font-style: italic;
   }
 
   #word-pos {
     font-size: 0.72rem;
-    color: #9f7faa;
+    color: #534ab7;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -119,7 +113,7 @@
 
   #word-def {
     font-size: 0.8rem;
-    color: #7d6e65;
+    color: #888780;
     margin-top: 0.4rem;
     line-height: 1.5;
     font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -129,24 +123,24 @@
   #quote-card {
     max-width: 800px;
     width: 100%;
-    background: #fdfaf7;
-    border: 0.5px solid #ddd5cc;
+    background: #12121a;
+    border: 0.5px solid #2c2c2a;
     border-radius: 16px;
     padding: 1.5rem 2rem;
-    border-left: 2px solid #c9a8c0;
+    border-left: 2px solid #534ab7;
   }
 
   #quote-text {
     font-size: clamp(0.95rem, 2.5vw, 1.15rem);
     line-height: 1.7;
-    color: #5a4e47;
+    color: #d3d1c7;
     font-family: 'Georgia', serif;
     font-style: italic;
   }
 
   #quote-author {
     font-size: 0.75rem;
-    color: #b8a89a;
+    color: #5f5e5a;
     margin-top: 0.75rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -154,7 +148,7 @@
     font-weight: 400;
   }
 
-  .loading { color: #b8a89a; font-size: 0.85rem; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .loading { color: #5f5e5a; font-size: 0.85rem; font-family: 'Helvetica Neue', Arial, sans-serif; }
 </style>
 </head>
 <body>
@@ -196,7 +190,6 @@ function updateClock() {
   const ampm = h >= 12 ? 'PM' : 'AM';
   h = h % 12 || 12;
   document.getElementById('time').textContent = h + ':' + m + ' ' + ampm;
-
   const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   document.getElementById('date').textContent =
@@ -219,9 +212,8 @@ async function fetchWeather() {
       80:'Rain showers', 81:'Rain showers', 82:'Heavy showers',
       95:'Thunderstorm', 96:'Thunderstorm', 99:'Thunderstorm'
     };
-    const desc = descs[code] || 'Unknown';
     document.getElementById('weather-temp').textContent = temp + '°F';
-    document.getElementById('weather-desc').textContent = desc;
+    document.getElementById('weather-desc').textContent = descs[code] || 'Unknown';
     document.getElementById('weather-feels').textContent = 'Feels like ' + feels + '°F';
   } catch(e) {
     document.getElementById('weather-desc').textContent = 'Weather unavailable';
@@ -258,7 +250,7 @@ const words = [
   { word: 'Opulent', pos: 'adjective', def: 'Ostentatiously rich and luxurious or lavish.' },
   { word: 'Penumbra', pos: 'noun', def: 'A partial shadow; the area of transition between full shadow and full light.' },
   { word: 'Quixotic', pos: 'adjective', def: 'Exceedingly idealistic; unrealistic and impractical, yet wonderfully so.' },
-  { word: 'Reverie', pos: 'noun', def: 'A state of being pleasantly lost in one\'s thoughts; a daydream.' },
+  { word: 'Reverie', pos: 'noun', def: "A state of being pleasantly lost in one's thoughts; a daydream." },
   { word: 'Sublime', pos: 'adjective', def: 'Of such excellence or beauty as to inspire great admiration.' },
   { word: 'Transcendent', pos: 'adjective', def: 'Beyond or above the range of normal experience; surpassing the ordinary.' },
   { word: 'Umbra', pos: 'noun', def: 'The fully shaded inner region of a shadow; a shadow or darkness.' },
@@ -269,11 +261,7 @@ const words = [
   { word: 'Zeal', pos: 'noun', def: 'Great energy or enthusiasm in pursuit of a cause or objective.' }
 ];
 
-function getDayWord() {
-  const day = Math.floor(Date.now() / 86400000);
-  return words[day % words.length];
-}
-const w = getDayWord();
+const w = words[Math.floor(Date.now() / 86400000) % words.length];
 document.getElementById('word').textContent = w.word;
 document.getElementById('word-pos').textContent = w.pos;
 document.getElementById('word-def').textContent = w.def;
@@ -293,12 +281,11 @@ const quotes = [
   { text: "A girl should be two things: who and what she wants.", author: "Coco Chanel" },
   { text: "She remembered who she was and the game changed.", author: "Lalah Delia" },
   { text: "Nothing is impossible. The word itself says I'm possible.", author: "Audrey Hepburn" },
-  { text: "I've learned that you shouldn't go through life with a catcher's mitt. You need to throw something back.", author: "Maya Angelou" },
   { text: "Your playing small doesn't serve the world. Shine.", author: "Marianne Williamson" },
   { text: "Doubt is a killer. You just have to know who you are and what you stand for.", author: "Jennifer Lopez" },
   { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
   { text: "Imperfection is beauty, madness is genius, and it's better to be absolutely ridiculous than boring.", author: "Marilyn Monroe" },
-  { text: "I never dreamed about success. I worked for it.", author: "Estée Lauder" },
+  { text: "I never dreamed about success. I worked for it.", author: "Estee Lauder" },
   { text: "Start where you are. Use what you have. Do what you can.", author: "Arthur Ashe" },
   { text: "In the middle of difficulty lies opportunity.", author: "Albert Einstein" },
   { text: "You are enough. A thousand times enough.", author: "Unknown" },
@@ -317,11 +304,7 @@ const quotes = [
   { text: "Throw kindness around like confetti.", author: "Unknown" }
 ];
 
-function getDayQuote() {
-  const day = Math.floor(Date.now() / 86400000);
-  return quotes[day % quotes.length];
-}
-const q = getDayQuote();
+const q = quotes[Math.floor(Date.now() / 86400000) % quotes.length];
 document.getElementById('quote-text').textContent = '\u201c' + q.text + '\u201d';
 document.getElementById('quote-author').textContent = '\u2014 ' + q.author;
 </script>
