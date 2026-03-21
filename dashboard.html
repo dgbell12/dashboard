@@ -213,4 +213,89 @@ setInterval(fetchWeather, 600000);
 var words = [
   { word: 'Luminous', pos: 'adjective', def: 'Full of or shedding light; bright or shining, especially in the dark.' },
   { word: 'Sonder', pos: 'noun', def: 'The realization that each passerby has a life as vivid and complex as your own.' },
-  { word: 'Ephemeral', pos: 'adjective', def: 'L
+  { word: 'Ephemeral', pos: 'adjective', def: 'Lasting for a very short time; transitory and fleeting.' },
+  { word: 'Resilient', pos: 'adjective', def: 'Able to recover quickly from difficulties; toughness of spirit.' },
+  { word: 'Effulgent', pos: 'adjective', def: 'Radiant; shining brilliantly.' },
+  { word: 'Ardor', pos: 'noun', def: 'Enthusiasm or passion, especially as it relates to love or a cherished cause.' },
+  { word: 'Tenacious', pos: 'adjective', def: 'Holding fast; characterized by keeping a firm hold.' },
+  { word: 'Serendipity', pos: 'noun', def: 'The occurrence of events by chance in a happy or beneficial way.' },
+  { word: 'Eloquent', pos: 'adjective', def: 'Fluent or persuasive in speaking or writing; clearly expressive.' },
+  { word: 'Intrepid', pos: 'adjective', def: 'Fearless; adventurous; resolutely courageous.' },
+  { word: 'Sagacious', pos: 'adjective', def: 'Having or showing keen mental discernment and good judgment.' },
+  { word: 'Solace', pos: 'noun', def: 'Comfort or consolation in a time of distress or sadness.' },
+  { word: 'Vivacious', pos: 'adjective', def: 'Attractively lively and animated; full of energy.' },
+  { word: 'Zenith', pos: 'noun', def: 'The time at which something is most powerful or successful; the peak.' },
+  { word: 'Euphoria', pos: 'noun', def: 'A feeling or state of intense excitement and happiness.' },
+  { word: 'Steadfast', pos: 'adjective', def: 'Resolutely firm and unwavering in purpose, loyalty, or resolve.' },
+  { word: 'Limerence', pos: 'noun', def: 'The state of being infatuated or obsessed with another person.' },
+  { word: 'Audacious', pos: 'adjective', def: 'Showing a willingness to take surprisingly bold risks.' },
+  { word: 'Wanderlust', pos: 'noun', def: 'A strong desire to travel and explore the world.' },
+  { word: 'Perspicacious', pos: 'adjective', def: 'Having a ready insight into things; shrewd and clear-sighted.' },
+  { word: 'Halcyon', pos: 'adjective', def: 'Denoting a period of time that was idyllically happy and peaceful.' },
+  { word: 'Incandescent', pos: 'adjective', def: 'Full of strong emotion; passionate and brilliant.' },
+  { word: 'Mercurial', pos: 'adjective', def: 'Subject to sudden or unpredictable changes of mood or mind.' },
+  { word: 'Nonchalant', pos: 'adjective', def: 'Feeling or appearing casually calm and relaxed; not displaying anxiety.' },
+  { word: 'Opulent', pos: 'adjective', def: 'Ostentatiously rich and luxurious or lavish.' },
+  { word: 'Penumbra', pos: 'noun', def: 'A partial shadow; the area of transition between full shadow and full light.' },
+  { word: 'Quixotic', pos: 'adjective', def: 'Exceedingly idealistic; unrealistic and impractical, yet wonderfully so.' },
+  { word: 'Reverie', pos: 'noun', def: 'A state of being pleasantly lost in ones thoughts; a daydream.' },
+  { word: 'Sublime', pos: 'adjective', def: 'Of such excellence or beauty as to inspire great admiration.' },
+  { word: 'Transcendent', pos: 'adjective', def: 'Beyond or above the range of normal experience; surpassing the ordinary.' },
+  { word: 'Umbra', pos: 'noun', def: 'The fully shaded inner region of a shadow; a shadow or darkness.' },
+  { word: 'Verdant', pos: 'adjective', def: 'Green with grass or other rich vegetation; fresh and flourishing.' },
+  { word: 'Whimsy', pos: 'noun', def: 'Playfully quaint or fanciful behavior or humor.' },
+  { word: 'Xenial', pos: 'adjective', def: 'Friendly to strangers; hospitable and welcoming.' },
+  { word: 'Yonder', pos: 'adverb', def: 'At some distance in the direction indicated; over there.' },
+  { word: 'Zeal', pos: 'noun', def: 'Great energy or enthusiasm in pursuit of a cause or objective.' }
+];
+
+var w = words[Math.floor(Date.now() / 86400000) % words.length];
+document.getElementById('word').textContent = w.word;
+document.getElementById('word-pos').textContent = w.pos;
+document.getElementById('word-def').textContent = w.def;
+
+var quotes = [
+  { text: 'You are braver than you believe, stronger than you seem, and smarter than you think.', author: 'A.A. Milne' },
+  { text: 'She is clothed with strength and dignity, and she laughs without fear of the future.', author: 'Proverbs 31:25' },
+  { text: 'The most courageous act is still to think for yourself. Aloud.', author: 'Coco Chanel' },
+  { text: 'I am not afraid of storms, for I am learning how to sail my ship.', author: 'Louisa May Alcott' },
+  { text: 'You do not have to be pretty. You do not owe prettiness to anyone.', author: 'Erin McKean' },
+  { text: 'Be yourself - everyone else is already taken.', author: 'Oscar Wilde' },
+  { text: 'Life is not measured by the number of breaths we take, but by the moments that take our breath away.', author: 'Maya Angelou' },
+  { text: 'No one can make you feel inferior without your consent.', author: 'Eleanor Roosevelt' },
+  { text: 'The question is not who is going to let me - it is who is going to stop me.', author: 'Ayn Rand' },
+  { text: 'Do one thing every day that scares you.', author: 'Mary Schmich' },
+  { text: 'Well-behaved women seldom make history.', author: 'Laurel Thatcher Ulrich' },
+  { text: 'A girl should be two things: who and what she wants.', author: 'Coco Chanel' },
+  { text: 'She remembered who she was and the game changed.', author: 'Lalah Delia' },
+  { text: 'Nothing is impossible. The word itself says I am possible.', author: 'Audrey Hepburn' },
+  { text: 'Your playing small does not serve the world. Shine.', author: 'Marianne Williamson' },
+  { text: 'Doubt is a killer. You just have to know who you are and what you stand for.', author: 'Jennifer Lopez' },
+  { text: 'The only way to do great work is to love what you do.', author: 'Steve Jobs' },
+  { text: 'Imperfection is beauty, madness is genius, and it is better to be absolutely ridiculous than boring.', author: 'Marilyn Monroe' },
+  { text: 'I never dreamed about success. I worked for it.', author: 'Estee Lauder' },
+  { text: 'Start where you are. Use what you have. Do what you can.', author: 'Arthur Ashe' },
+  { text: 'In the middle of difficulty lies opportunity.', author: 'Albert Einstein' },
+  { text: 'You are enough. A thousand times enough.', author: 'Unknown' },
+  { text: 'Be the energy you want to attract.', author: 'Unknown' },
+  { text: 'Growth and comfort do not coexist.', author: 'Ginni Rometty' },
+  { text: 'The secret of getting ahead is getting started.', author: 'Mark Twain' },
+  { text: 'If you want the rainbow, you gotta put up with the rain.', author: 'Dolly Parton' },
+  { text: 'You are allowed to be both a masterpiece and a work in progress simultaneously.', author: 'Sophia Bush' },
+  { text: 'Act as if what you do makes a difference. It does.', author: 'William James' },
+  { text: 'Happiness is not something ready made. It comes from your own actions.', author: 'Dalai Lama' },
+  { text: 'You have been assigned this mountain to show others it can be moved.', author: 'Mel Robbins' },
+  { text: 'Difficult roads often lead to beautiful destinations.', author: 'Zig Ziglar' },
+  { text: 'Be so good they cannot ignore you.', author: 'Steve Martin' },
+  { text: 'Make today so awesome that yesterday gets jealous.', author: 'Unknown' },
+  { text: 'Life is short. Buy the shoes. Eat the cake. Take the trip.', author: 'Unknown' },
+  { text: 'Throw kindness around like confetti.', author: 'Unknown' },
+  { text: 'You are exactly where you need to be.', author: 'Unknown' }
+];
+
+var q = quotes[Math.floor(Date.now() / 86400000) % quotes.length];
+document.getElementById('quote-text').textContent = '\u201c' + q.text + '\u201d';
+document.getElementById('quote-author').textContent = '\u2014 ' + q.author;
+</script>
+</body>
+</html>
